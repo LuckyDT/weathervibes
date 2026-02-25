@@ -6,7 +6,7 @@ from rich import print
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
-CITY = "Sofia"
+CITY = "Moscow"
 
 def get_weather(city: str):
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
