@@ -1,26 +1,15 @@
-import os
-import requests
-from dotenv import load_dotenv
 from rich import print
-
-load_dotenv()
-
-API_KEY = os.getenv("API_KEY")
-CITY = "Moscow"
-
-def get_weather(city: str):
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
-    response = requests.get(url)
-    data = response.json()
-    return data
+from weather_api import get_weather
 
 def main():
-    weather = get_weather(CITY)
+    city = input("Введите город: ")
+    weather = get_weather(city)
+
     temp = weather["main"]["temp"]
     desc = weather["weather"][0]["description"]
 
     print(f"[bold cyan]Weather Vibes[/bold cyan]")
-    print(f"City: [green]{CITY}[/green]")
+    print(f"City: [green]{city}[/green]")
     print(f"Temperature: [yellow]{temp}°C[/yellow]")
     print(f"Description: [magenta]{desc}[/magenta]")
 
