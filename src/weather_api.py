@@ -6,6 +6,7 @@ load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 
+
 def get_weather(city: str) -> dict:
     """Запрашивает погоду по названию города."""
     url = (

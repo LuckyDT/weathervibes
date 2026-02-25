@@ -1,5 +1,6 @@
 from weather_api import get_weather
 
+
 def test_get_weather_returns_dict(monkeypatch):
     """Проверяем, что функция возвращает словарь при корректном ответе API."""
 
